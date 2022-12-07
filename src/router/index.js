@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Main from '../pages/Main.vue';
 import Login from '../pages/Login.vue';
 import Signup from '../pages/Signup.vue';
-import Members from '../pages/Members.vue';
-import Modify from '../pages/Modify.vue';
-import Myclub from '../pages/Myclub.vue';
-import Myactivity from '../pages/Myactivity.vue';
+import Members from '../pages/Mypage/Members.vue';
+import Modify from '../pages/Mypage/Modify.vue';
+import Mymeeting from '../pages/Mypage/Mymeeting.vue';
+import Myactivity from '../pages/Mypage/Myactivity.vue';
+import Createmeeting from '../pages/Meeting/Createmeeting.vue';
+import Search from '../pages/Search.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -43,15 +45,25 @@ const router = createRouter({
             component: Modify,
         },
         {
-            path: '/mypage/myclub',
-            name: 'Myclub',
-            component: Myclub,
+            path: '/mypage/mymeeting',
+            name: 'Mymeeting',
+            component: Mymeeting,
         },
         {
             path: '/mypage/myactivity',
             name: 'Myactivity',
             component: Myactivity,
         },
+        {
+            path: '/meeting/createmeeting',
+            name: 'Createmeeting',
+            component: Createmeeting,
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search,
+        }
     ]
 })
 

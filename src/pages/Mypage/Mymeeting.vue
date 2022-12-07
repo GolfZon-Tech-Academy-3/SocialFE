@@ -2,7 +2,7 @@
     <div>
         <h2 style="width: 980px;margin: 0.5em auto;">MyPage</h2>
         <div style="width: 980px;height: 650px;margin: 0 auto;display: flex;">
-            <div style="width: 140px;height: 120px;background-color: white;margin-right: 15px;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;text-align: center;font-size: 0.9em;cursor: pointer;">
+            <div style="width: 140px;height: 120px;background-color: white;margin-right: 150px;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;text-align: center;font-size: 0.9em;cursor: pointer;">
                 <div :class="[link === '/mypage/members' ? 'menuSelected' : 'menu']" @click="moveTo('Members')">
                     <div style="display:inline;vertical-align:middle;">
                         모임원
@@ -13,7 +13,7 @@
                         회원정보 수정
                     </div>
                 </div>
-                <div :class="[link === '/mypage/myclub' ? 'menuSelected' : 'menu']" @click="moveTo('Myclub')">
+                <div :class="[link === '/mypage/mymeeting' ? 'menuSelected' : 'menu']" @click="moveTo('Mymeeting')">
                     <div style="display:inline;vertical-align:middle;">
                         내 모임
                     </div>
@@ -25,27 +25,12 @@
                 </div>
             </div>
 
-            <div style="width: 140px;height: 120px;background-color: white;margin-right: 15px;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;">
-
-            </div>
-
-            <div style="width: 360px;height: 100%;background-color: white;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;">
-                <table>
-                    <thead>
-                        <th>권한</th>
-                        <th>닉네임</th>
-                        <th>성별</th>
-                        <th>나이</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div style="width: 400px;height: 600px;background-color: white;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;">
+                <div style="width: 90%;height:4%;padding: 3% 0 3% 3%;font-size: 1.2em;font-weight: bold;">
+                    내 모임
+                </div>
+                <div style="width: 100%;height: 92%;">
+                </div>
             </div>
         </div>
     </div>
@@ -72,14 +57,6 @@ export default {
 </script>
 
 <style scoped>
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th {
-    padding: 0.5em 0 0.5em 0;
-    border-bottom: 1px solid #B8B8B8;
-}
 .menu {
     width: 100%;
     height: 25%;
