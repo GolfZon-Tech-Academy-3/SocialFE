@@ -1,63 +1,85 @@
 <template>
-  <div class="signup">
-    <div v-if="!inserted" style="width: 80px; height: 80px; background-color: #d9d9d9; border-radius: 50%; margin: 0 auto;box-shadow: 0 0 5px 0 gray" ></div>
-    <img v-if="inserted" :src="src" style=" width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; overflow: hidden; object-fit: cover;box-shadow: 0 0 5px 0 gray" />
-    <input hidden type="file" id="file" accept="image/*" @change="changeImage($event)" />
-    <label for="file">
-      <div style=" width: 10%; margin: 1em auto; background-color: #a6a6a6; color: white; cursor: pointer; box-shadow: 0 0 5px 0 gray; padding: 0.2em; border-radius: 1em; " > 선택 </div>
-    </label>
     <div>
-      <input type="text" style=" width: 63%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 2em; " placeholder="아이디" />
-      <span style=" width: 60%; border: none; padding: 0.9em 0.6em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 2em; margin-left: 1em; vertical-align: middle; background-color: #a6a6a6; color: white; font-size: 0.9em; " >중복확인</span >
-      <input type="text" style=" width: 84%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em; " placeholder="비밀번호" />
-      <div style=" text-align: left; margin-left: 2em; margin-bottom: 1em; font-size: 0.8em; color: #a5a5a5; " > 영문과 숫자 8자리 이상 </div>
-      <input type="text" style=" width: 84%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 2em; " placeholder="비밀번호 확인" />
-      <div style="margin-bottom: 1em">
-        <select style=" width: 25%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em; margin-right: 2em;background-color: white;" >
-          <option value="none">나이</option>
-          <option v-for="age in 47" :key="age">{{ age + 13 }} 세</option>
-        </select>
-        <select style=" width: 25%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em; margin-right: 2em; " >
-          <option value="none">성별</option>
-          <option value="남">남</option>
-          <option value="여">여</option>
-        </select>
-        <select style=" width: 28%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em; " >
-          <option value="none">평균 타수</option>
-          <option value="60타 미만">60타 이하</option>
-          <option value="60타 이상 70타 미만">60타 이상 70타 미만</option>
-          <option value="70타 이상 80타 미만">70타 이상 80타 미만</option>
-          <option value="80타 이상 90타 미만">80타 이상 90타 미만</option>
-          <option value="90타 이상 100타 미만">90타 이상 100타 미만</option>
-          <option value="100타 이상">100타 이상</option>
-        </select>
-      </div>
+        <h2 style="width: 980px;margin: 0.5em auto;">검색</h2>
+        <div style="width: 980px;height: 700px;margin: 0 auto;display: flex;">
+            <div style="width: 140px;height: 330px;background-color: white;margin-right: 15px;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;font-size: 0.9em;display: flex;flex-direction: column;">
+                <div style="width: 100%;height: 7%;margin-left: 25%;display: flex;align-items: center;">
+                    <input type="checkbox" style="border-color: #a5a5a5;" />
+                    <span>
+                        모임
+                    </span>
+                </div>
+                <div style="width: 100%;height: 7%;margin-left: 25%;display: flex;align-items: center;">
+                    <input type="checkbox" style="border-color: #a5a5a5;" />
+                    <span>
+                        액티비티
+                    </span>
+                </div>
+                <div style="width: 100%;height: 7%;margin-left: 25%;display: flex;align-items: center;">
+                    <input type="checkbox" style="border-color: #a5a5a5;" />
+                    <span>
+                        라운드
+                    </span>
+                </div>
 
-      <input type="text" style=" width: 63%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 2em; " placeholder="닉네임" />
-      <span style=" width: 60%; border: none; padding: 0.9em 0.6em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 2em; margin-left: 1em; vertical-align: middle; background-color: #a6a6a6; color: white; font-size: 0.9em; " >중복확인</span >
+                <div style="width: 100%;height: 16%;display: flex;align-items: center;">
+                    <input type="text" placeholder="검색어" style="width: 80%;margin: 0 auto;background-color: #EAEAEA;border: none;padding: 0.5em;box-shadow: 0 0 5px 0 gray;border-radius: 0.3em;" />
+                </div>
+                <div style="width: 100%;height: 16%;display: flex;align-items: center;">
+                    <select style="width: 90%;margin: 0 auto;background-color: #EAEAEA;border: none;padding: 0.4em;box-shadow: 0 0 5px 0 gray;border-radius: 0.3em;">
+                        <option value="none">성별</option>
+                        <option value="남">남</option>
+                        <option value="여">여</option>
+                        <option value="상관없음">상관없음</option>
+                    </select>
+                </div>
+                <div style="width: 100%;height: 16%;display: flex;align-items: center;">
+                    <select style="width: 90%;margin: 0 auto;background-color: #EAEAEA;border: none;padding: 0.4em;box-shadow: 0 0 5px 0 gray;border-radius: 0.3em;">
+                        <option value="none">나이</option>
+                        <option v-for="age in 47" :key="age">{{ age + 13 }} 세</option>
+                    </select>
+                </div>
+                <div style="width: 100%;height: 16%;display: flex;align-items: center;">
+                    <select v-model="selectedCity" style="width: 40%;margin: 0 auto;background-color: #EAEAEA;border: none;padding: 0.4em;box-shadow: 0 0 5px 0 gray;border-radius: 0.3em;" >
+                        <option value="none">시도</option>
+                        <option v-for="city in cities" :key="city">{{ city }}</option>
+                    </select>
+                    <select :disabled="selectedCity === 'none'" v-model="selectedSi" style="width: 40%;margin: 0 auto;background-color: #EAEAEA;border: none;padding: 0.4em;box-shadow: 0 0 5px 0 gray;border-radius: 0.3em;" >
+                        <option value="none">시군구</option>
+                        <option v-for="s in si[selectedCity]" :key="s">{{s}}</option>
+                    </select>
+                </div>
+                <div style="width: 100%;height: 16%;;display: flex;align-items: center;">
+                    <button style="width: 90%;margin: 0 auto;border: none;border-radius: 0.3em;box-shadow: 0 0 5px 0 gray;padding: 0.4em;background-color: #A6A6A6;color: white;cursor: pointer;">
+                        검색
+                    </button>
+                </div>
+            </div>
 
-      <div style="margin-bottom: 1em">
-        <select v-model="selectedCity" style=" width: 42%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em; margin-right: 2em;" >
-          <option value="none">시 / 도</option>
-          <option v-for="city in cities" :key="city">{{ city }}</option>
-        </select>
-        <select :disabled="selectedCity === 'none'" v-model="selectedSi" style=" width: 42%; border: none; padding: 1em; border-radius: 1em; box-shadow: 0 0 5px 0 gray; margin-bottom: 1em;" >
-          <option value="none">시 / 군 / 구</option>
-          <option v-for="s in si[selectedCity]" :key="s">{{s}}</option>
-        </select>
-      </div>
+            <div style="display: flex;flex-direction: column;">
+                <div style="width: 670px;height: 330px;background-color: white;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;margin-bottom: 20px;">
+                    <div style="width: 80%;height: 8%;padding: 0.5em 0 0.5em 1em;font-weight: bold;">
+                        모임
+                    </div>
+                    <div style="width: 100%;height: 288px;">
+                    </div>
+                </div>
+                <div style="width: 670px;height: 330px;background-color: white;box-shadow: 0 0 5px 0 gray;border-radius: 0.5em;margin-bottom: 20px;">
+                    <div style="width: 80%;height: 8%;padding: 0.5em 0 0.5em 1em;font-weight: bold;">
+                        액티비티 / 라운드
+                    </div>
+                    <div style="width: 100%;height: 288px;">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <button style="width: 90%;border: none;padding: 1em; border-radius: 1em;box-shadow: 0 0 5px 0 gray;margin-bottom: 2em; background-color: #A6A6A6;color: white;cursor: pointer;">회원가입</button>
-  </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref } from 'vue';
 export default {
-  setup() {
-    const src = ref('');
-    const inserted = ref(false);
-    const file = ref(null);
+    setup() {
     const cities = ref([
       '서울특별시',
       '부산광역시',
@@ -322,34 +344,16 @@ export default {
     const selectedCity = ref('none');
     const selectedSi = ref('');
 
-    const changeImage = (e) => {
-      file.value = e.target.files[0];
-      var reader = new FileReader();
-      reader.onload = (e) => {
-        src.value = e.target.result;
-      };
-      reader.readAsDataURL(e.target.files[0]);
-      inserted.value = true;
-    };
-
-    return {
-      src,
-      inserted,
-      changeImage,
-      cities,
-      si,
-      selectedCity,
-      selectedSi,
-    };
-  },
-};
+        return {
+            cities,
+            si,
+            selectedCity,
+            selectedSi,
+        }
+    }
+}
 </script>
 
-<style scoped>
-.signup {
-  width: 400px;
-  height: 650px;
-  margin: 5vh auto;
-  text-align: center;
-}
+<style>
+
 </style>

@@ -13,7 +13,7 @@
                         회원정보 수정
                     </div>
                 </div>
-                <div :class="[link === '/mypage/myclub' ? 'menuSelected' : 'menu']" @click="moveTo('Myclub')">
+                <div :class="[link === '/mypage/mymeeting' ? 'menuSelected' : 'menu']" @click="moveTo('Mymeeting')">
                     <div style="display:inline;vertical-align:middle;">
                         내 모임
                     </div>

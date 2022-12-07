@@ -37,4 +37,7 @@ select {
 button {
   font-family: 'Noto Sans KR', sans-serif;
 }
+textarea {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 </style>
